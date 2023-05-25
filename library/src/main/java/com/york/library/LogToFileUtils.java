@@ -194,17 +194,17 @@ public class LogToFileUtils {
         File file;
         boolean canStorage = true;
         // 判断是否有SD卡或者外部存储器
-//        if (useSdCard && Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-//            canStorage = readSDCardSpace() > LOG_MAX_SIZE / 1024;
-//            // 有SD卡则使用SD - PS:没SD卡但是有外部存储器，会使用外部存储器
-//            // SD\OSSLog\logs.csv
-//            file = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + LOG_DIR_NAME);
-//        } else {
-            // 没有SD卡或者外部存储器，使用内部存储器
-            // \data\data\包名\files\OSSLog\logs.csv
-//            canStorage = readSystemSpace() > LOG_MAX_SIZE / 1024;
-            file = new File(sContext.getFilesDir().getPath() + File.separator + LOG_DIR_NAME);
-//        }
+        //        if (useSdCard && Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        //            canStorage = readSDCardSpace() > LOG_MAX_SIZE / 1024;
+        //            // 有SD卡则使用SD - PS:没SD卡但是有外部存储器，会使用外部存储器
+        //            // SD\OSSLog\logs.csv
+        //            file = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + LOG_DIR_NAME);
+        //        } else {
+        // 没有SD卡或者外部存储器，使用内部存储器
+        // \data\data\包名\files\OSSLog\logs.csv
+        //            canStorage = readSystemSpace() > LOG_MAX_SIZE / 1024;
+        file = new File(sContext.getFilesDir().getPath() + File.separator + LOG_DIR_NAME);
+        //        }
         File logFile = null;
         // 若目录不存在则创建目录
         if (canStorage) {
